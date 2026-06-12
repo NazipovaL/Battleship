@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Морской Бой - Правила</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    @font-face {
+      font-family: 'GULAG Pavljenko';
+      src: url('../assets/fonts/GULAG-Pavljenko.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+    }
+  </style>
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="background-blur"></div>
+  
+  <div class="container rules-container">
+    <!-- Логотип -->
+    <div class="logo">
+      <img src="/assets/images/logo.png" alt="Мечи" class="swords-icon">
+    </div>
+    
+    <h1 class="main-title rules-title">ПРАВИЛА ИГРЫ</h1>
+    
+    <!-- текст правил -->
+    <p class="rules-intro">Расставьте корабли на поле: один 4-палубный, 
+два 3-палубных, три 2-палубных и четыре 1-палубных. 
+Корабли не должны касаться друг друга даже углами. 
+Стреляйте по полю противника, кликая по клеткам. 
+При попадании вы получаете право на дополнительный выстрел. 
+Игра продолжается до полного уничтожения флота одного из игроков. 
+Побеждает тот, кто первым потопит все корабли соперника.</p>
+    
+    <!-- Карточки -->
+    <div class="rules-modes-grid">
+      <!-- Локальная игра -->
+      <div class="rules-card">
+        <h2 class="rules-card-title">Локальная игра</h2>
+        <ul class="rules-list">
+          <li>Одиночная игра 
+      с компьютерным соперником</li>
+          <li>Выбор уровня сложности</li>
+          <li>Работа без подключения
+      к Интернету</li>
+        </ul>
+      </div>
+      
+      <!-- Сетевая игра -->
+      <div class="rules-card">
+        <h2 class="rules-card-title">Сетевая игра</h2>
+        <ul class="rules-list">
+          <li>Соревнование
+      с реальным соперником</li>
+          <li>Создание лобби 
+      или подключение по коду</li>
+          <li>Требуется подключение
+      к Интернету</li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Кнопка Назад -->
+    <button class="btn-back" id="back-btn">Назад</button>
+  </div>
+  
+    <script src="js/audio.js"></script>
+  <script src="/js/rules.js"></script>
+</body>
+</html>

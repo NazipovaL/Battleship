@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Морской Бой - Создание игры</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    @font-face {
+      font-family: 'GULAG Pavljenko';
+      src: url('../assets/fonts/GULAG-Pavljenko.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+    }
+  </style>
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="background-blur"></div>
+  
+  <div class="container create-game-container">
+    
+    <div class="logo">
+      <img src="/assets/images/logo.png" alt="Мечи" class="swords-icon">
+    </div>
+    
+    <h1 class="main-title create-game-title">СОЗДАНИЕ НОВОЙ ИГРЫ</h1>
+    
+    <div class="code-section">
+      <p class="code-label">Код подключения</p>
+      <div class="code-display" id="game-code">LOADING...</div>
+      <button class="btn-copy" id="copy-btn">Скопировать</button>
+    </div>
+    
+    <div class="status-section">
+      <p class="status-text">Ожидаем подключение противника</p>
+      <div class="dots">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+    
+    <button class="btn-back" id="back-btn">Назад</button>
+  </div>
+  
+    <script src="js/audio.js"></script>
+  <script src="/js/create-game.js"></script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Морской Бой - Игра</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    @font-face {
+      font-family: 'GULAG Pavljenko';
+      src: url('/assets/fonts/GULAG-Pavljenko.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+    }
+  </style>
+
+  <!-- Подключаем общий CSS сокомандницы -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!-- Только то, чего нет в её CSS -->
+  <style>
+    /* Промахи на своём поле (у неё этого нет) */
+    #player-grid .cell.miss {
+      background: rgba(133, 251, 255, 0.05);
+    }
+
+    #player-grid .cell.miss::after {
+      content: '•';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: rgba(133, 251, 255, 0.6);
+      font-size: 24px;
+    }
+
+    /* Курсор на поле противника */
+    #enemy-grid .cell:not(.hit):not(.miss) {
+      cursor: crosshair;
+    }
+
+    #player-grid .cell {
+      cursor: default;
+    }
+
+    /* Исправление бага в её CSS (width: 1000%) */
+    .game-footer {
+      width: 100%;
+    }
+
+    .game-container {
+      width: 100%;
+      max-width: 1000px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="background-blur"></div>
+
+  <div class="container game-container">
+
+    <!-- Шапка -->
+    <div class="game-header">
+      <div class="logo">
+        <img src="/assets/images/logo.png" alt="Мечи" class="swords-icon">
+      </div>
+      <h1 class="main-title game-title">ИГРА</h1>
+
+      <button class="settings-btn" id="settings-btn" title="Настройки">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path
+            d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+          </path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Игровые поля -->
+    <div class="fields-wrapper">
+      <!-- Ваше поле -->
+      <div class="field-section">
+        <div class="player-card" id="player-info">
+          <!-- <img  src="" alt="avatar"> -->
+          <div id="player-avatar"></div>
+          <span id="player-nickname"></span>
+        </div>
+        <!-- <h2 class="field-label">Ваше поле</h2> -->
+        <div class="battle-field">
+          <div class="field-row labels">
+            <span class="corner"></span>
+            <span>А</span><span>Б</span><span>В</span><span>Г</span><span>Д</span>
+            <span>Е</span><span>Ж</span><span>З</span><span>И</span><span>К</span>
+          </div>
+          <div class="field-grid" id="player-grid"></div>
+          <div class="field-row field-column labels">
+            <span class="corner"></span>
+            <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+            <span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Поле противника -->
+      <div class="field-section">
+
+        <div class="player-card" id="enemy-info">
+          <!-- <imgsrc="" alt="avatar"> -->
+          <div id="enemy-avatar"></div>
+          <span id="enemy-nickname"></span>
+        </div>
+        <!-- <h2 class="field-label">Поле противника</h2> -->
+        <div class="battle-field">
+          <div class="field-row labels">
+            <span class="corner"></span>
+            <span>А</span><span>Б</span><span>В</span><span>Г</span><span>Д</span>
+            <span>Е</span><span>Ж</span><span>З</span><span>И</span><span>К</span>
+          </div>
+          <div class="field-grid" id="enemy-grid"></div>
+          <div class="field-row field-column labels">
+            <span class="corner"></span>
+            <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+            <span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Статус и кнопка -->
+    <div class="game-footer">
+      <div class="status-indicator" id="game-status">Загрузка...</div>
+      <button class="btn-surrender" id="surrender-btn">Сдаться</button>
+    </div>
+  </div>
+
+  <!-- Модальное окно настроек -->
+  <div class="modal-overlay" id="settings-modal">
+    <div class="modal-content">
+      <h2 class="card-title">НАСТРОЙКИ</h2>
+
+      <div class="toggle-pill">
+        <span class="toggle-label">Музыка</span>
+        <label class="switch">
+          <!-- <input type="checkbox" checked> -->
+          <input type="checkbox" id="music-toggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="toggle-pill">
+        <span class="toggle-label">Звуковые эффекты</span>
+        <label class="switch">
+          <!-- <input type="checkbox" checked> -->
+          <input type="checkbox" id="sound-toggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <button class="register-button" id="close-modal-btn" style="margin-top: 20px;">ЗАКРЫТЬ</button>
+    </div>
+  </div>
+
+
+    <script src="js/audio.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/game-process.js"></script>
+</body>
+
+</html>

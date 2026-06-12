@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Морской Бой - Регистрация</title>
+
+  <!-- шрифт Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <style>
+    @font-face {
+      font-family: 'GULAG Pavljenko';
+      src: url('/assets/fonts/GULAG-Pavljenko.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="background-blur"></div>
+
+  <div class="container">
+    <!-- Логотип -->
+    <div class="logo">
+      <img src="/assets/images/logo.png" alt="Мечи" class="swords-icon">
+      <h1 class="main-title">МОРСКОЙ БОЙ</h1>
+    </div>
+
+    <!-- Карточка регистрации -->
+    <div class="registration-card">
+      <h2 class="card-title">Авторизация</h2>
+
+      <form class="registration-form" novalidate>
+        <!-- Поле Никнейм -->
+        <div class="input-group">
+          <input type="text" class="input-field" placeholder="Никнейм" id="nickname" required minlength="4"
+            maxlength="8">
+        </div>
+
+        <!-- Выбор аватара -->
+        <div class="avatar-section">
+          <h3 class="avatar-title">ВЫБОР АВАТАРА</h3>
+
+          <div class="carousel-wrapper">
+
+            <!-- Стрелка ВЛЕВО -->
+            <button type="button" class="nav-arrow arrow-left">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
+            </button>
+
+            <!-- Карусель Swiper -->
+            <div class="swiper avatar-swiper">
+              <div class="swiper-wrapper">
+                <!-- 10 слайдов -->
+                <div class="swiper-slide">
+                  <div class="avatar-circle">
+                    <img src="assets/images/avatars/avatar-1.png" alt="">
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="avatar-circle">
+                    <img src="assets/images/avatars/avatar-2.png" alt="">
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="avatar-circle">
+                    <img src="assets/images/avatars/avatar-3.png" alt="">
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="avatar-circle">
+                    <img src="assets/images/avatars/avatar-4.png" alt="">
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="avatar-circle">
+                    <img src="assets/images/avatars/avatar-5.png" alt="">
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="avatar-circle">
+                    <img src="assets/images/avatars/avatar-6.png" alt="">
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="avatar-circle">
+                    <img src="assets/images/avatars/avatar-7.png" alt="">
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="avatar-circle">
+                    <img src="assets/images/avatars/avatar-8.png" alt="">
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="avatar-circle">
+                    <img src="assets/images/avatars/avatar-9.png" alt="">
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="avatar-circle">
+                    <img src="assets/images/avatars/avatar-10.png" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Стрелка ВПРАВО -->
+            <button type="button" class="nav-arrow arrow-right">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M9 18l6-6-6-6" />
+              </svg>
+            </button>
+
+          </div>
+        </div>
+
+        <!-- Кнопка регистрации -->
+        <button type="submit" class="register-button">
+          АВТОРИЗОВАТЬСЯ
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+     <script src="js/audio.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/auth.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Морской Бой - Меню</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <style>
+    @font-face {
+      font-family: 'GULAG Pavljenko';
+      src: url('/assets/fonts/GULAG-Pavljenko.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="background-blur"></div>
+
+  <div class="container menu-container">
+
+    <div class="menu-header">
+      <div class="user-avatar" id="user-avatar">
+      </div>
+    </div>
+
+    <h1 class="welcome-title">ДОБРО ПОЖАЛОВАТЬ, <span id="user-nickname">ИГРОК</span>!</h1>
+
+    <!-- Кнопки меню -->
+    <div class="menu-buttons">
+      <button class="btn btn--large">Создать игру</button>
+      <button class="btn btn--large">Подключиться к игре</button>
+
+      <div class="btn-grid">
+        <button class="btn btn--small">Правила</button>
+        <button class="btn btn--small">Настройки</button>
+        <button class="btn btn--small">О системе</button>
+        <button class="btn btn--small">О разработчиках</button>
+      </div>
+    </div>
+
+    <!-- Кнопка выхода -->
+    <button class="logout-btn" id="logout-btn">
+      <img src="https://img.icons8.com/ios-filled/50/85FBFF/logout-rounded.png" alt="" class="logout-icon">
+      <span>Выход</span>
+    </button>
+  </div>
+
+    <script src="js/audio.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/menu.js"></script>
+</body>
+
+</html>

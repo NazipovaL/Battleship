@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Морской Бой - Настройка ИИ</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    @font-face {
+      font-family: 'GULAG Pavljenko';
+      src: url('../assets/fonts/GULAG-Pavljenko.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+    }
+  </style>
+
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div class="background-blur"></div>
+
+  <div class="container ai-settings-container ai-page">
+    <!-- Логотип -->
+    <div class="logo">
+      <img src="/assets/images/logo.png" alt="Мечи" class="swords-icon">
+    </div>
+
+    <h1 class="main-title ai-settings-title">НАСТРОЙКА СОПЕРНИКА</h1>
+
+
+    <!-- Радио-кнопки сложности -->
+    <div class="ai-settings-single">
+      <h2 class="column-title">Уровень сложности</h2>
+
+      <label class="radio-label">
+        <input type="radio" name="difficulty" value="easy">
+        <span class="radio-custom"></span>
+        <span class="radio-text">Лёгкий</span>
+      </label>
+
+      <label class="radio-label">
+        <input type="radio" name="difficulty" value="medium" checked>
+        <span class="radio-custom"></span>
+        <span class="radio-text">Средний</span>
+      </label>
+
+      <label class="radio-label">
+        <input type="radio" name="difficulty" value="hard">
+        <span class="radio-custom"></span>
+        <span class="radio-text">Сложный</span>
+      </label>
+    </div>
+
+    <!-- Кнопки по углам -->
+    <div class="ai-navigation">
+      <button class="btn-nav register-button" id="back-btn">Назад</button>
+      <button class="btn-nav register-button" id="forward-btn">Вперед</button>
+    </div>
+  </div>
+
+    <script src="js/audio.js"></script>
+  <script src="/js/api.js"></script>
+  <script src="/js/ai-settings.js"></script>
+</body>
+
+</html>

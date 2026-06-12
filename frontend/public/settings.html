@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Морской Бой - Настройки</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  
+  <style>
+    @font-face {
+      font-family: 'GULAG Pavljenko';
+      src: url('/assets/fonts/GULAG-Pavljenko.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+    }
+  </style>
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="background-blur"></div>
+  
+  <div class="container settings-container">
+    <div class="logo">
+      <img src="/assets/images/logo.png" alt="Мечи" class="swords-icon">
+    </div>
+    
+    <div class="registration-card settings-card">
+      <h2 class="card-title">НАСТРОЙКИ</h2>
+      
+      <!-- Переключатели -->
+      <div class="toggle-pill">
+        <span class="toggle-label">Музыка</span>
+        <label class="switch">
+          <input type="checkbox" id="music-toggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="toggle-pill">
+        <span class="toggle-label">Звуковые эффекты</span>
+        <label class="switch">
+          <input type="checkbox" id="sound-toggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <button class="register-button" id="save-btn">СОХРАНИТЬ</button>
+    </div>
+  </div>
+  
+  <script src="js/audio.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="/js/settings.js"></script>
+</body>
+</html>

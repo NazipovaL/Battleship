@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Морской Бой - Результат</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    @font-face {
+      font-family: 'GULAG Pavljenko';
+      src: url('/assets/fonts/GULAG-Pavljenko.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+    }
+  </style>
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="background-blur"></div>
+  
+  <div class="container result-container">
+    <!-- Логотип -->
+    <div class="logo">
+      <img src="/assets/images/logo.png" alt="Мечи" class="swords-icon">
+    </div>
+    
+    <!-- Заголовок результата -->
+    <h1 class="result-title" id="result-title">ПОБЕДА!</h1>
+    
+    <!-- Статистика -->
+    <div class="stats-card">
+      <h2 class="stats-title">Статистика матча</h2>
+      <div class="stats-list">
+        <div class="stat-row">
+          <span class="stat-label">Ходов сделано:</span>
+          <span class="stat-value" id="stat-moves">—</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Точность:</span>
+          <span class="stat-value" id="stat-accuracy">—</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Время игры:</span>
+          <span class="stat-value" id="stat-time">—</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Кнопки -->
+    <div class="result-buttons">
+      <button class="btn-result primary" id="rematch-btn">Сыграть ещё</button>
+      <button class="btn-result" id="menu-btn">В меню</button>
+    </div>
+  </div>
+  
+    <script src="js/audio.js"></script>
+  <script src="/js/winner.js"></script>
+</body>
+</html>

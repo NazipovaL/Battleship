@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Морской Бой - Выбор режима</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    @font-face {
+      font-family: 'GULAG Pavljenko';
+      src: url('../assets/fonts/GULAG-Pavljenko.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+    }
+  </style>
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="background-blur"></div>
+  
+  <div class="container game-mode-container">
+    <!-- Логотип -->
+    <div class="logo">
+      <img src="/assets/images/logo.png" alt="Мечи" class="swords-icon">
+    </div>
+    
+    <!-- Заголовок -->
+    <h1 class="main-title game-mode-title">ВЫБЕРИТЕ РЕЖИМ ИГРЫ</h1>
+    
+    <div class="modes-grid">
+      <!-- Локальная игра -->
+      <div class="mode-card">
+        <h2 class="mode-title">Локальная игра</h2>
+        <ul class="mode-features">
+          <li>Одиночная игра с компьютерным соперником</li>
+          <li>Выбор уровня сложности</li>
+          <li>Работа без подключения к Интернету</li>
+        </ul>
+        <button class="btn-mode" data-mode="local">Выбрать</button>
+      </div>
+      
+      <!-- Сетевая игра -->
+      <div class="mode-card">
+        <h2 class="mode-title">Сетевая игра</h2>
+        <ul class="mode-features">
+          <li>Соревнование с реальным соперником</li>
+          <li>Создание лобби или подключение по коду</li>
+          <li>Требуется подключение к Интернету</li>
+        </ul>
+        <button class="btn-mode" data-mode="online">Выбрать</button>
+      </div>
+    </div>
+    
+    <!-- Кнопка назад -->
+    <button class="btn-back" id="back-btn">Назад</button>
+  </div>
+  
+    <script src="js/audio.js"></script>
+  <script src="/js/game-mode.js"></script>
+</body>
+</html>
